@@ -23,7 +23,11 @@ end CannotInitialize
  * methods, and that is the @main annotation, since Java requires a static main
  * method to be the entry point of the program. Otherwise, you cannot create
  * static methods. EVERYTHING is an object in Scala (except public static void
- * main(args: String*)) */
+ * main(args: String*))
+ *
+ * CORRECTION: I was looking through SIPs (Scala Improvement Proposals) and saw
+ * that SIP-30 introduced the @static annotation to force the compiler to
+ * generate static values/methods. The more you know! */
 
 // If a class only has one constructor, you can define it with the class.
 class Circle(radius: Double)
