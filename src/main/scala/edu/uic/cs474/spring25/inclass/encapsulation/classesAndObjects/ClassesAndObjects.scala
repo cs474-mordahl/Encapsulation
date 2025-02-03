@@ -43,8 +43,8 @@ val b = ThisCircle()    // Uses the auxilliary constructor.
 
 // 3. You can implement 'apply' methods in the companion object (THIS IS THE WAY!)
 class Rectangle private (height: Double, width: Double):
-    def getHeight() = this.height
-    def getWidth() = this.width
+  def getHeight(): Double = this.height
+  def getWidth(): Double  = this.width
 
 object Rectangle:
   def apply(): Rectangle =
@@ -64,8 +64,8 @@ end Rectangle
   * generate *any* apply methods automatically. You can use the 'new' keyword to
   * force Scala to use a constructor.
   */
-val unitRectangle = Rectangle() // syntactic sugar for Rectangle.apply()
-val square        = Rectangle(2.0) // sugar for Rectangle.apply(2.0)
+val unitRectangle = Rectangle()         // syntactic sugar for Rectangle.apply()
+val square        = Rectangle(2.0)      // sugar for Rectangle.apply(2.0)
 val rectangle     = Rectangle(1.0, 2.0) // and by now, you get it.
 /* We cannot explicitly call the constructor, since it is private. */
 // val fail = new Rectangle(1.0, 2.0)
